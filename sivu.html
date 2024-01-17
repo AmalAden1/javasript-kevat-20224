@@ -7,12 +7,22 @@
 </head>
 <body>
     <center>
-        <h1> Sivusto</h1>
+        <h1> Eläinhoitola</h1>
         <h3 id="paikka"></h3>
+        
 
         <button onclick="tervehdi()">Katso tervehdys</button>
+        <button onclick="palvelut()">Palvelumme</button>
+        <button onclick="hinnasto()">Hinnasto</button>
+        <button onclick="yhteydenotto()">Yhteystiedot</button>
+
+        <div id="sisältö" ></div>
 
     </center>
+
+    <script src="sivu.js"></script>
+
+
 
     <script>
         function tervehdi(){
@@ -22,6 +32,7 @@
 
 
      }
+     //getEkementById().innerText komento on hyvä id määrittelyyn 
 //sivuston katso tervehdys  button onclick painattaessa kutsutaan function tervehdys-kommenti
     </script>
     
