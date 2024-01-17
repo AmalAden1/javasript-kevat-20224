@@ -1,12 +1,13 @@
 const autot = [{id: 1, merkki: "Toyota", vuosimalli: 2006, hinta: 9000},{id:2, merkki: "BNW", vuosimalli: 1996, hinta: 4800},
-{id:3, merkki:"Volvo", vuosimalli: 2010, hinta: 909}]
+{id:3, merkki:"Lada", vuosimalli: 2010, hinta: 909}]
 
+var hakusana = ""
 
 var standard_input = process.stdin
 standard_input.setEncoding('utf-8')
 console.log("JavaScript autohaku")
 console.log("Sovellus suljetaan kirjautumalla 'exit'")
-process.stdout.writen("Hae autojen merkin mukaan:  ") 
+process.stdout.write("Hae autojen merkin mukaan:  ") 
 standard_input.on('data', function(data){
      // sovellus suljetaan, kun käyttäjä antaa avainsanan 'exit'
      if (data === 'exit\r\n'){
@@ -15,11 +16,9 @@ standard_input.on('data', function(data){
         }  
         
         else {
-            hakusana = data
-
-            
+            hakusana = data.trim()
             autot.forEach(a => {
-                if (a.merkki.indexOf(hakusana) > -1) {
+                if (a.merkki.toLocaleLowerCase().indexOf(hakusana.toLocaleLowerCase())> -1) {
                 console.log("Merkki: " + a.merkki + "vm." + a.vuosimalli + "Hinta: " + a.hinta)
                 }
                 }
